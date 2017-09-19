@@ -1,0 +1,28 @@
+{
+  "name": "reminder-api",
+  "version": "1.0.0",
+  "description": "API backend service for Authentication and database storage.",
+  "main": "app.js",
+  "scripts": {
+    "start-dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RQMplays/ReminderAPI.git"
+  },
+  "author": "RQM-",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RQMplays/ReminderAPI/issues"
+  },
+  "homepage": "https://github.com/RQMplays/ReminderAPI#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "express-promise-router": "^2.0.0",
+    "joi": "^11.0.2",
+    "jsonwebtoken": "^8.0.1",
+    "mongoose": "^4.11.12",
+    "morgan": "^1.8.2"
+  }
+}
