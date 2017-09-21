@@ -13,6 +13,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 // Routes
+app.use('/stickys', require('./routes/stickys'));
 app.use('/users', require('./routes/users'));
 
 // Start Server

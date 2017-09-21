@@ -17,7 +17,16 @@ module.exports = {
     authSchema: joi.object().keys({
       username: joi.string().required().min(3).max(16),
       email: joi.string().email().required(),
-      password: joi.string().required().min(3).max(30)
-    })
+      password: joi.string().required().min(8).max(30)
+    }),
+		loginSchema: joi.object().keys({
+			email: joi.string().required(),
+			password: joi.string().required().min(8).max(30)
+		}),
+		stickySchema: joi.object().keys({
+			title: joi.string().required(),
+			content: joi.string().required(),
+			priority: joi.number()
+		})
   }
 }
