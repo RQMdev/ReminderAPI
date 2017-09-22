@@ -12,7 +12,10 @@ router.route('/signup')
 router.route('/signin')
   .post(validateBody(schemas.loginSchema), passport.authenticate('local', { session: false }), UsersControllers.signIn);
 
-router.route('/secret')
-  .get(passport.authenticate('jwt', { session: false }), UsersControllers.secret);
+router.route('/signout')
+	.get(passport.authenticate('jwt', { session: false }), UsersControllers.signOut);
+
+router.route('/delete')
+  .delete(passport.authenticate('jwt', { session: false }), UsersControllers.deleteUser);
 
 module.exports = router;

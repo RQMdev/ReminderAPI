@@ -1,7 +1,11 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const expressJwt = require('express-jwt');
+const blacklist = require('express-jwt-blacklist');
+const { JWT_SECRET } = require('./configuration');
 const mongoose = require('mongoose');
+
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/reminderAPI');

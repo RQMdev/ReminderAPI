@@ -20,6 +20,8 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.1",
     "express": "^4.15.4",
+    "express-jwt": "^5.3.0",
+    "express-jwt-blacklist": "^1.1.0",
     "express-promise-router": "^2.0.0",
     "joi": "^11.0.2",
     "jsonwebtoken": "^8.0.1",

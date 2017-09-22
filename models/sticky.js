@@ -13,6 +13,10 @@ const stickySchema = new Schema({
 	priority: {
 		type: Number,
 	},
+	userId: {
+		type: String,
+		required: true
+	},
 	date: {
 		type: Date,
 		default: Date.now

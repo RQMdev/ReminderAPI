@@ -24,9 +24,13 @@ module.exports = {
 			password: joi.string().required().min(8).max(30)
 		}),
 		stickySchema: joi.object().keys({
+			_id: joi.string(),
 			title: joi.string().required(),
 			content: joi.string().required(),
-			priority: joi.number()
+			priority: joi.number(),
+			userId: joi.string(),
+			__v: joi.number(),
+			date: joi.date()
 		})
   }
 }

@@ -1,7 +1,7 @@
 # ReminderAPI
 Backend Authentication and Database storage API using Node.js/Express.js and more !
 
-## SignUp, SignIn, SignOut.
+## Users Methods
 
 ### SignUp
 
@@ -15,7 +15,8 @@ Backend Authentication and Database storage API using Node.js/Express.js and mor
 
 		response :
 		{
-			"token" : "tokenEncoded"
+			"token" : "tokenEncoded",
+			"userId": "idOfUser"
 		}
 
 		OR
@@ -34,22 +35,128 @@ Backend Authentication and Database storage API using Node.js/Express.js and mor
 
 		response :
 		{
-			"token": "tokenEncoded"
+			"token": "tokenEncoded",
+			"userId": "idOfUser"
 		}
 		OR
 		{
 			"error": "error"
 		}
 
-### SignOut
+### SignOut ( W.I.P)...
 
 	GET method on /users/signout
-	data Send
-	{
-		"token": "tokenEncoded"
-	}
+		data Send in Header : authorization => token
 
 	response:
 	{
-		
+
 	}
+
+### Delete User
+
+
+## Stickys Methods
+
+### getStickys
+
+	GET method on /stickys/
+		data Send in Header : authorization => token
+
+		response:
+		[{
+			"id": "idOfTheSticky",
+			"title":"titleOfTheSticky",
+			"content":"contentOfTheSticky",
+			"priority":"priorityOfTheSticky",
+			"userId": "IdOfTheOwnerUser",
+			"date": "DateOfCreation"
+		},
+		{
+			"id": "idOfTheSticky",
+			"title":"titleOfTheSticky",
+			"content":"contentOfTheSticky",
+			"priority":"priorityOfTheSticky",
+			"userId": "IdOfTheOwnerUser",
+			"date": "DateOfCreation"
+		},
+		{
+			"id": "idOfTheSticky",
+			"title":"titleOfTheSticky",
+			"content":"contentOfTheSticky",
+			"priority":"priorityOfTheSticky",
+			"userId": "IdOfTheOwnerUser",
+			"date": "DateOfCreation"
+		}]
+
+### addStickys
+
+	POST method on /stickys/add
+		data Send in Header : authorization => token
+		data Send in body (json):
+		{
+			"title":"titleOfTheSticky",
+			"content":"contentOfTheSticky",
+			"priority":"priorityOfTheSticky"
+		}
+
+		response:
+		{
+			"id": "idOfTheSticky",
+			"title":"titleOfTheSticky",
+			"content":"contentOfTheSticky",
+			"priority":"priorityOfTheSticky",
+			"userId": "IdOfTheOwnerUser",
+			"date": "DateOfCreation"
+		}
+
+### editStickys
+
+	POST method on /stickys/edit
+		data Send in Header : authorization => token
+		data Send in Body (json):
+		{
+			"id": "idOfTheSticky",
+			"title":"new_titleOfTheSticky",
+			"content":"new_contentOfTheSticky",
+			"priority":"new_priorityOfTheSticky",
+			"userId": "IdOfTheOwnerUser",
+			"date": "DateOfCreation"
+		}
+
+		response:
+		{
+			"id": "idOfTheSticky",
+			"title":"new_titleOfTheSticky",
+			"content":"new_contentOfTheSticky",
+			"priority":"new_priorityOfTheSticky",
+			"userId": "IdOfTheOwnerUser",
+			"date": "DateOfCreation"
+		}
+		OR
+		{
+			msg: 'Sticky\'s not found in the database'
+		}
+
+### deleteStickys
+
+	DELETE method on /stickys/delete
+		data Send in Header : authorization => token
+		data Send in Body (json):
+		{
+			"id": "idOfTheSticky",
+			"title":"titleOfTheSticky",
+			"content":"contentOfTheSticky",
+			"priority":"priorityOfTheSticky",
+			"userId": "IdOfTheOwnerUser",
+			"date": "DateOfCreation"
+		}
+
+		response:
+		{
+			"msg":"Sticky successfully deleted."
+		}
+		OR
+		{
+			msg: 'Sticky\'s not found in the database'
+		}
