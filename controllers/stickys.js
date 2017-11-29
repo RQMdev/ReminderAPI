@@ -11,6 +11,14 @@ module.exports = {
 		});
 	},
 
+	searchStickys: async (req, res, next) => {
+		console.log('StickysController.searchStickys called !');
+		// const userId = req.user.id;
+		// const search = req.body.search;
+		//
+		// Sticky.find({userId, title: })
+	},
+
 	addSticky: async (req, res, next) => {
 		console.log('StickysController.addSticky called !');
 
@@ -25,21 +33,23 @@ module.exports = {
 		res.status(200).json(foundSticky);
 
 	},
+
 	editSticky: async (req, res, next) => {
 		console.log('StickysController.editSticky called !');
-		const { id, title, content, priority, userId, date } = req.value.body;
+		const { _id, title, content, priority, userId, date } = req.value.body;
 
-		const editedSticky = await Sticky.findOneAndUpdate({id}, {title, content, priority}, {new: true});
+		const editedSticky = await Sticky.findOneAndUpdate({_id}, {title, content, priority}, {new: true});
 		if (!editedSticky){
 			res.status(404).json({msg:'Sticky\'s not found in the database.'});
 		}
 		res.status(200).json(editedSticky);
 	},
+
 	deleteSticky: async (req, res, next) => {
 		console.log('StickysController.deleteSticky called !');
-		const { id, title, content, priority, userId, date } = req.value.body;
-		console.log(id);
-		const deletedSticky = await Sticky.findOneAndRemove({id});
+		const { _id, title, content, priority, userId, date } = req.value.body;
+		console.log(_id);
+		const deletedSticky = await Sticky.findOneAndRemove({_id});
 		if (!deletedSticky){
 			res.status(404).json({msg:'Sticky\'s not found in the database.'});
 		}

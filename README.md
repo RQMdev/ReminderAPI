@@ -55,6 +55,17 @@ Backend Authentication and Database storage API using Node.js/Express.js and mor
 
 ### Delete User
 
+	DELETE method on /users/delete/
+	data Send in Header : authorization => token
+
+	response:
+	{
+		msg : `User successfully deleted, ${numberOfDeletedStickys} Stickys deleted.`
+	}
+	OR
+	{
+		msg: `User\'s not found in the database, ${numberOfDeletedStickys} Stickys deleted.`
+	}
 
 ## Stickys Methods
 

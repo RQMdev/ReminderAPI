@@ -9,6 +9,9 @@ const StickysControllers = require('../controllers/stickys');
 router.route('/')
 	.get(passport.authenticate('jwt', { session: false }), StickysControllers.getStickys);
 
+router.route('/search')
+	.post(passport.authenticate('jwt', { session: false }), StickysControllers.searchStickys);
+
 router.route('/add')
 	.post(validateBody(schemas.stickySchema), passport.authenticate('jwt', { session: false }), StickysControllers.addSticky);
 
