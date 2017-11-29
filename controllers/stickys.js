@@ -36,9 +36,9 @@ module.exports = {
 
 	editSticky: async (req, res, next) => {
 		console.log('StickysController.editSticky called !');
-		const { _id, title, content, priority, userId, date } = req.value.body;
+		const { _id, title, content, priority, userId, date, image } = req.value.body;
 
-		const editedSticky = await Sticky.findOneAndUpdate({_id}, {title, content, priority}, {new: true});
+		const editedSticky = await Sticky.findOneAndUpdate({_id}, {title, content, priority, image}, {new: true});
 		if (!editedSticky){
 			res.status(404).json({msg:'Sticky\'s not found in the database.'});
 		}

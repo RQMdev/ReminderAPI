@@ -30,7 +30,8 @@ module.exports = {
 			priority: joi.number(),
 			userId: joi.string(),
 			__v: joi.number(),
-			date: joi.date()
+			date: joi.date(),
+      image: joi.string()
 		})
   }
 }
