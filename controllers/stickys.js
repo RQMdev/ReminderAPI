@@ -1,4 +1,5 @@
 const Sticky = require('../models/sticky');
+//  const multer = require('multer');
 
 module.exports = {
 	getStickys: async (req, res, next) => {
@@ -32,6 +33,13 @@ module.exports = {
 
 		res.status(200).json(foundSticky);
 
+	},
+
+	uploadImage: async (req, res, next) =>{
+		console.log(req.file);
+		req.file.path = req.file.path.replace('public/', '');
+		console.log(req.file);
+		res.json(req.file)
 	},
 
 	editSticky: async (req, res, next) => {
