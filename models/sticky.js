@@ -23,7 +23,10 @@ const stickySchema = new Schema({
 	},
 	image: {
 		type: String
-	}
+	},
+	datePicked: {
+		type: Date
+	},
 });
 
 const Sticky = mongoose.model('sticky', stickySchema);

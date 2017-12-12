@@ -31,7 +31,8 @@ module.exports = {
 			userId: joi.string(),
 			__v: joi.number(),
 			date: joi.date(),
-      image: joi.string()
+      image: joi.string(),
+      datePicked: joi.date()
 		})
   }
 }
