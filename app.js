@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/reminderAPI1');
+mongoose.connect('mongodb://localhost/reminderAPI');
 
 const app = express();
 

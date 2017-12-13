@@ -25,7 +25,7 @@ const stickySchema = new Schema({
 		type: String
 	},
 	datePicked: {
-		type: Date
+		type: String
 	},
 });
 

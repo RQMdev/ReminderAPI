@@ -32,7 +32,7 @@ module.exports = {
 			__v: joi.number(),
 			date: joi.date(),
       image: joi.string(),
-      datePicked: joi.date()
+      datePicked: joi.string()
 		})
   }
 }
