@@ -26,7 +26,7 @@ module.exports = {
 		const { title, content, priority } = req.value.body;
 		const userId = req.user.id;
 
-		const newSticky = new Sticky({title, content, priority, userId });
+		const newSticky = new Sticky({title, content, priority, userId, });
 		await newSticky.save();
 
 		const foundSticky = await Sticky.findOne({title, content, priority, userId });
